@@ -1,23 +1,25 @@
+require_relative '../controllers/game.rb'
+
 class Die
-  attr_accessor :die
+  attr_accessor :letters
   def initialize
     @letters = [
-      %w(AAEEGN),
-      %w(ELRTTY),
-      %w(AOOTTW),
-      %w(ABBJOO),
-      %w(EHRTVW),
-      %w(CIMOTV),
-      %w(DISTTY),
-      %w(EIOSST),
-      %w(DELRVY),
-      %w(ACHOPS),
-      %w(HIMNQU),
-      %w(EEINSU),
-      %w(EEGHNW),
-      %w(AFFKPS),
-      %w(HLNNRZ),
-      %w(DEILRX)
+      %w(A A E E G N),
+      %w(E L R T T Y),
+      %w(A O O T T W),
+      %w(A B B J O O),
+      %w(E H R T V W),
+      %w(C I M O T V),
+      %w(D I S T T Y),
+      %w(E I O S S T),
+      %w(D E L R V Y),
+      %w(A C H O P S),
+      %w(H I M N Q U),
+      %w(E E I N S U),
+      %w(E E G H N W),
+      %w(A F F K P S),
+      %w(H L N N R Z),
+      %w(D E I L R X)
     ]
   end
 end
