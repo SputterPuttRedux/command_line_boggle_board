@@ -1,3 +1,4 @@
+require 'pry'
 require_relative '../controllers/game.rb'
 require_relative '../models/die.rb'
 require_relative '../models/board.rb'
@@ -30,16 +31,38 @@ end
 module GridSolver
   class Boggle
     #only allows for even grid
-    def initialize(grid_size)
-      @grid_size = grid_size
+    def initialize(board)
+      @board = board
     end
 
     def corner_coordinates
-
+      [0,3].repeated_permutation(2).to_a
     end
 
     def at_corner?
     end
 
+    def grid_coordinates
+      count_for_row_coordinate = 0
+
+      @board.each_slice(4) do |row|
+        row.map do |letter|
+          Array.new(2){
+            [count_for_row_coordinate, row.index(letter)]
+          }
+        end
+        count_for_row_coordinate += 1
+      end
+    end
   end
 end
+
+#  test = Array.new(16){[nil,nil]}
+#  count = 0
+#  test.each_slice(4) do |row|
+#   row.map do |inner_array|
+#     inner_array[0] = count
+#     inner_array[-1] = row.index(inner_array)
+#   end
+#   count += 1
+# end
